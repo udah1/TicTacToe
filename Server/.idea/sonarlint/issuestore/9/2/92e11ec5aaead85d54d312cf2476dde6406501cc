@@ -1,0 +1,5 @@
+
+ijavascript:S3403"JRemove this "!==" check; it will always be true. Did you mean to use "!="?(§ò³şÿÿÿÿ
+gjavascript:UnusedVariable"?Remove the declaration of the unused 'totalRoomCount' variable.(êò§²ıÿÿÿÿ
+ajavascript:UnusedVariable"9Remove the declaration of the unused 'allRooms' variable.(âŠïşıÿÿÿÿ
+kjavascript:S2589"LRefactor this code so that this expression does not always evaluate to true.(§ò³şÿÿÿÿ
