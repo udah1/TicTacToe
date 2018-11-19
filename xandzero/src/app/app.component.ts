@@ -118,7 +118,7 @@ export class AppComponent implements OnInit {
 	opponentMove(params) {
 		this.displayPlayerTurn = !this.displayPlayerTurn ? true : false;
 		if (params['winner'] ===  null) {
-			this.gameGrid[params['position']] = {
+			this.playedGameGrid[params['position']] = {
 				position: params['position'],
 				player: params['playedText']
 			};
@@ -139,7 +139,7 @@ export class AppComponent implements OnInit {
 			return;
 		}
 		this.movesPlayed += 1;
-		this.gameGrid[number] = {
+		this.playedGameGrid[number] = {
 			position: number,
 			player: this.whoseTurn
 		};
@@ -147,7 +147,7 @@ export class AppComponent implements OnInit {
 			'roomNumber' : this.roomNumber,
 			'playedText': this.whoseTurn,
 			'position' : number,
-			"gameGrid": this.gameGrid,
+			'playedGameGrid': this.playedGameGrid,
 			'movesPlayed' : this.movesPlayed
 		});
 		this.myTurn = false;
@@ -158,10 +158,10 @@ export class AppComponent implements OnInit {
 	 * @param number
 	 */
 	renderPlayedText(number) {
-		if (this.gameGrid[number] === undefined) {
+		if (this.playedGameGrid[number] === undefined) {
 			return '';
 		}else {
-			this.playedText = this.gameGrid[number]['player'];
+			this.playedText = this.playedGameGrid[number]['player'];
 			return this.playedText;
 		}
 	}
@@ -169,7 +169,7 @@ export class AppComponent implements OnInit {
 	 * As the name suggests here in this method we will reset the game.
 	 */
 	resetGame() {
-		this.gameGrid = [];
+		this.playedGameGrid = [];
 		this.gameGrid = [];
 		this.gameGrid = this.appService.gameGrid;
 		this.movesPlayed = 0;
